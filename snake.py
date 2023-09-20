@@ -31,18 +31,12 @@ class Snake():
         new_segment.goto(position)
         self.segments.append(new_segment)
 
+    def reset_snake(self):
+        self.head.goto(0,0)
+        self.head.setheading(0)
+
     def extend(self):
         self.add_segment(self.segments[-1].position())
-
-
-    def game_over(self):
-        self.color("white")
-        self.goto(-30,30)
-        self.penup()
-        self.hideturtle()
-        self.display_score()
-        self.write(f"Game-Over", move=False, align="center", font=("Arial", 20, "bold"))
-
 
     def up(self):
         if self.head.heading()!=DOWN:
@@ -56,3 +50,5 @@ class Snake():
     def move_right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+
