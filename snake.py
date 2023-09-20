@@ -32,9 +32,21 @@ class Snake():
         self.segments.append(new_segment)
 
     def reset_snake(self):
-        self.head.goto(0,0)
-        self.head.setheading(0)
+        if self.head.xcor() > 300:
+            new_x = -300
+        elif self.head.xcor() < -300:
+            new_x = 300
+        else:
+            new_x = self.head.xcor()
 
+        if self.head.ycor() > 300:
+            new_y = -300
+        elif self.head.ycor() < -300:
+            new_y = 300
+        else:
+            new_y = self.head.ycor()
+
+        self.head.goto(new_x, new_y)
     def extend(self):
         self.add_segment(self.segments[-1].position())
 

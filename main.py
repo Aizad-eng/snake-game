@@ -25,7 +25,6 @@ score=ScoreCard()
 game_is_on = True
 
 while game_is_on:
-    print(snake.head.xcor())
     screen.update()
     time.sleep(0.1)
     snake.move()
