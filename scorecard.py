@@ -18,7 +18,6 @@ class ScoreCard(Turtle):
     def increment_score(self):
         self.score+=1
         self.display_score()
-        print(self.score)
 
     def game_over(self):
         self.color("white")
