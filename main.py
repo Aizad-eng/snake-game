@@ -30,7 +30,6 @@ while game_is_on:
     snake.move()
     if snake.head.xcor() > 300 or snake.head.xcor()<-300 or snake.head.ycor() > 300 or snake.head.ycor() < -300:
         snake.reset_snake()
-        score.reset_score()
     if snake.head.distance(food) <15:
         food.refresh()
         snake.extend()
